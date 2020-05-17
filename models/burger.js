@@ -13,18 +13,13 @@ var burger = {
             name, false
         ], cb);
     },
-    update: function(objColVals, condition, cb) {
-        orm.update("burgers", objColVals, condition, function(res) {
+
+    update: function(id, cb) {
+        var condition = "id=" + id;
+        orm.update("burgers", { devoured: true }, condition, function(res) {
             cb(res);
         });
     }
-
-    // update: function(id, cb) {
-    //     var condition = "id=" + id;
-    //     orm.update("cats", objColVals, condition, function(res) {
-    //         cb(res);
-    //     });
-    // }
 
 };
 
