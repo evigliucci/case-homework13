@@ -6,6 +6,8 @@ DROP TABLE IF EXISTS burgers;
 
 -- Create the burgers table which will contain     id(int and is the primarykey), burger_name(varchar), devoured(boolean)
 CREATE TABLE burgers (
-
-    
+    id int NOT NULL AUTO_INCREMENT,
+	burger_name varchar(255) NOT NULL,
+	devoured BOOLEAN DEFAULT false,
+	PRIMARY KEY (id)
 );

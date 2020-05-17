@@ -1,6 +1,6 @@
 var express = require("express");
 
-var PORT = process.env.PORT || 8000;
+var PORT = process.env.PORT || 8080;
 var app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
@@ -19,6 +19,8 @@ var routes = require("./controllers/burgersController.js");
 
 app.use(routes);
 
+// Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
-  console.log("Listening on port:%s", PORT);
+    // Log (server-side) when our server has started
+    console.log("Server listening on: http://localhost:" + PORT);
 });
